@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Dancing Script', cursive;
-            background-image: url(Bcakground\ Image\ 6.jpg);
+            background-image: url('Bcakground Image 6.jpg');
             margin: 0;
             padding: 0;
             color: white;
@@ -72,7 +72,7 @@
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity" name="quantity" value="1" min="1" onchange="calculateTotal()">
         <p class="total">Total: P<span id="total-price"></span></p>
-        <form action="thankyou.php" method="POST">
+        <form action="thankyou.html" method="GET">
             <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" placeholder="Your Full Name" required>
             <label for="email">Email:</label>
@@ -81,7 +81,7 @@
             <textarea id="address" name="address" rows="4" placeholder="Your Address" required></textarea>
             <input type="hidden" name="product" id="product-hidden">
             <input type="hidden" name="price" id="price-hidden">
-            <input type="hidden" name="quantity-hidden" id="quantity-hidden">
+            <input type="hidden" name="quantity" id="quantity-hidden">
             <input type="hidden" name="total" id="total-hidden">
             <button type="submit" class="cart-btn" onclick="prepareForm()">Submit Order</button>
         </form>
@@ -91,6 +91,7 @@
         const productName = urlParams.get('product');
         const productPrice = urlParams.get('price');
 
+        // Display product and price
         document.getElementById('product-name').textContent = productName;
         document.getElementById('product-price').textContent = productPrice;
         document.getElementById('total-price').textContent = productPrice;
