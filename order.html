@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Dancing Script', cursive;
+            background-image: url(Bcakground\ Image\ 6.jpg);
+            margin: 0;
+            padding: 0;
+            color: white;
+            background-size: cover;
+            font-size: larger;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 20px;
+            background-color: rgba(44, 59, 74, 0.815);
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 95%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+        .price {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .total {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .cart-btn {
+            display: inline-block;
+            width: 95%;
+            padding: 10px 20px;
+            background-color: orange;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .cart-btn:hover {
+            background-color: rgba(212, 143, 13, 0.765);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Details</h1>
+        <p>Product: <span id="product-name"></span></p>
+        <p class="price">Price: P<span id="product-price"></span></p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1" onchange="calculateTotal()">
+        <p class="total">Total: P<span id="total-price"></span></p>
+        <form action="submit_order.php" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <label for="address">Delivery Address:</label>
+            <textarea id="address" name="address" rows="4" placeholder="Your Address" required></textarea>
+            <input type="hidden" name="product" id="product-hidden">
+            <input type="hidden" name="price" id="price-hidden">
+            <input type="hidden" name="quantity-hidden" id="quantity-hidden">
+            <input type="hidden" name="total" id="total-hidden">
+            <button type="submit" class="cart-btn" onclick="prepareForm()">Submit Order</button>
+        </form>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const productName = urlParams.get('product');
+        const productPrice = urlParams.get('price');
+
+        document.getElementById('product-name').textContent = productName;
+        document.getElementById('product-price').textContent = productPrice;
+        document.getElementById('total-price').textContent = productPrice;
+
+        function calculateTotal() {
+            const quantity = document.getElementById('quantity').value;
+            document.getElementById('total-price').textContent = quantity * productPrice;
+        }
+
+        function prepareForm() {
+            document.getElementById('product-hidden').value = productName;
+            document.getElementById('price-hidden').value = productPrice;
+            document.getElementById('quantity-hidden').value = document.getElementById('quantity').value;
+            document.getElementById('total-hidden').value = document.getElementById('total-price').textContent;
+        }
+    </script>
+</body>
+</html>

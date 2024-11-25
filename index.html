@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craft Tree Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Dancing Script', cursive;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: rgba(44, 59, 74, 0.815);
+            color: black;
+            scroll-behavior: smooth;
+        }
+        
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black;
+            background-size: cover;
+            padding: 15px 15px;
+        }
+
+        .logo img {
+            width: 150px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-direction: row;
+        }
+
+        .nav-icon{
+            width: 25px;
+            height: 25px;
+            margin-right: 0px;
+            display: flex;
+        
+        }
+
+        .nav-menu li {
+            margin: 0px 0;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: rgb(247, 167, 19);
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: rgba(245, 254, 254, 0.012);
+        }
+
+        .nav-menu img {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+           background-image: url(Bcakground\ Image\ 6.jpg);
+           background-size: cover;
+            color: rgb(16, 14, 14);
+            font-size: 1.3em;
+            text-align: center;
+            padding: 40px 20px;
+            text-shadow: black;
+        }
+
+        .hero h1 {
+            font-size: calc(5rem+2vw);
+        }
+
+        /* Content Section */
+        .content {
+            padding: 20px;
+            text-align: center;
+           font-size: 1.0em;
+        }
+
+        .content h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: rgba(12, 12, 10, 0.926);
+        }
+
+        .content p{
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+
+        /* Social Accounts Section */
+        .social {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .social h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+            border-radius: 3px;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 20px;
+    
+        }
+
+        .products h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+          
+        }
+
+        .box {
+            border: 1px solid gray;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          
+        }
+
+        .box img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            
+        }
+
+        .box h3 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+
+        .box .price {
+            font-size: 1.2em;
+            color: rgb(7, 6, 6);
+            margin: 10px 0;
+        }
+
+        .box .price span {
+            text-decoration: line-through;
+            margin-left: 10px;
+            color: red;
+        }
+
+        .box .cart-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: orange;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+          
+        }
+
+        .box .cart-btn:hover {
+            background-color: rgba(212, 143, 13, 0.765);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .content h1 {
+                font-size: 1.0em;
+            }
+
+            .products h1 {
+                font-size: 2em;
+            }
+        }
+        .phone-number, .gmail-link {
+        display: flex;                  /* Align icon and text horizontally */
+        align-items: center;           /* Vertically center icon and text */
+        justify-content: center;       /* Center content horizontally */
+        color: blue;                   /* Text color */
+        text-decoration: none;         /* Remove underline */
+        font-weight: bold;             /* Bold text */
+     margin: 10px 0;                /* Spacing between items */
+}
+
+
+/* Hover Effect for Links */
+.phone-number:hover, .gmail-link:hover {
+    text-decoration: underline;    /* Underline on hover */
+    color: darkblue;               /* Darker blue on hover */
+}
+
+
+
+/* Icon Styling for Both Call and Gmail */
+.call-icon, .gmail-icon {
+    width: 30px;                   /* Smaller icon width */
+    height: 30px;                  /* Smaller icon height */
+    margin-right: 10px;            /* Space between icon and text */
+    cursor: pointer;               /* Pointer cursor on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+
+/* Hover Effect for Icons */
+.call-icon:hover, .gmail-icon:hover {
+    transform: scale(1.1);         /* Slight zoom-in effect on hover */
+}
+
+
+.contact {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .contact h4{
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5em;
+            }
+
+            .content h1 {
+                font-size: 1.5em;
+            }
+
+            .products h1 {
+                font-size: 2.0em;
+            }
+
+            .social-icons img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+
+    .footer {
+    background-color: rgb(93, 106, 121);
+    color: #0e0b0b;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.footer-about,
+.footer-links,
+.footer-social {
+    flex: 1;
+    min-width: 200px; /* Ensures responsive layout */
+}
+
+
+.footer-about p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+.footer-links ul li {
+    margin: 10px 0;
+}
+
+
+.footer-links a {
+    text-decoration: none;
+    color: #ffd700;
+    transition: color 0.3s;
+}
+
+
+.footer-links a:hover {
+    color: #ffa500;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Above everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+.confirm-btn,
+.cancel-btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.confirm-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.confirm-btn:hover {
+    background-color: #218838;
+}
+
+.cancel-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Button */
+.cart-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: orange;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.cart-btn:hover {
+    background-color: darkorange;
+    color: white;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#" class="logo">
+            <img src="craftlogo.png" alt="Craft Tree Logo">
+        
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html"><img src="Home.jpg" alt="Home Icon"> Home</a></li>
+            <li><a href="about.html"><img src="bell icon.jpg" class="active" alt="About Icon"> About</a></li>
+            <li><a href="contact.html"><img src="callicon.jpg" alt="Contact Icon Icon"> Contact</a></li>
+            <li><a href="products.html"><img src="Products.jpg" alt="Products Icon"> Products</a></li>
+        </ul>
+    </nav>
+
+
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div>
+        <h1>Welcome to Craft Tree!</h1>
+        <div class="content">
+
+            <p>At Craft Tree, we believe in nurturing creativity while respecting our beautiful planet.</p>
+            <p>Our eco-friendly products are carefully sourced to ensure that every craft you create contributes to a sustainable future.</p>
+            <p>We are passionate about providing high-quality, environmentally responsible materials that inspire you to craft with a conscience.</p>
+            <p>From biodegradable glues to organic fabrics, each item in our collection is chosen with care to minimize environmental impact without compromising on quality.</p>
+            <p>Happy crafting!</p>
+        </div>
+    
+    </section>
+
+
+
+    <!-- Products Section -->
+</div>
+    <section id="products" class="products">
+        <div>
+        <h1>Eco-Friendly Products</h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="Image1.jpg" alt="Product 1">
+                <h3>Tin Can Pencil Holder</h3>
+                <div class="price">P50.00 <span>P85.00</span></div>
+                <a href="#" class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            </div>
+            <div class="box">
+                <img src="Image2.jpg" alt="Product 2">
+                <h3>Macrame Hanging Wall Decor</h3>
+                <div class="price">P275.00 <span>P379.00</span></div>
+                <a href="#" class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            </div>
+
+            <div class="box">
+                <img src="Image3.jpg" alt="Product 2">
+                <h3>DIY Plastic-Bottle Flower Pot</h3>
+                <div class="price">P45.00 <span>P65.00</span></div>
+                <a href="#" class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            </div>
+            <div class="box">
+                <img src="Image4.jpg" alt="Product 2">
+                <h3>Aesthetic Macrame Wall Decor</h3>
+                <div class="price">P310.00 <span>P375.00</span></div>
+                <a href="#" class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            </div>
+            <div class="box">
+                <img src="Image5.jpg" alt="Product 2">
+                <h3>Fairy House Night Lights</h3>
+                <div class="price">P75.00 <span>P85.00</span></div>
+                <a href="#" class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            </div>
+            <div class="box">
+                <img src="Image6.jpg" alt="Product 2">
+                <h3>Tin Can Wind Chimes</h3>
+                <div class="price">P150.00 <span>P000.00</span></div>
+                <a href="#" class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            </div>
+            <div class="box">
+                <img src="Image7.jpg" alt="Product 2">
+                <h3>DIY Bottle Bird House</h3>
+                <div class="price">P89.00 <span>P000.00</span></div>
+                <a href="#" class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            </div>
+            <div class="box">
+                <img src="Image8.jpg" alt="Product 2">
+                <h3>Recycled Bottle Fairy Houses</h3>
+                <div class="price">P75.00 <span>P85.00</span></div>
+                <a href="#" class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            </div>
+        </div>
+    </div>
+        </section>
+
+
+
+
+    </div>
+    <section id="content" class="content">
+        <Div>
+        
+        <h1>About Us - Craft Tree Shop 🌿</h1>
+        <p></p>
+        <p>Welcome to Craft Tree Shop, your go-to destination for eco-friendly products that make a difference! </p>
+        <p>We are a passionate team dedicated to creating sustainable solutions that blend beauty, functionality, and environmental consciousness. </p>
+        <p>At Craft Tree, we believe that small changes in our daily lives can lead to a big impact on our planet.</p>
+        <p></p>
+        <h2>Our Mission</h2>
+        <p>Our mission is simple: to inspire a greener lifestyle through high-quality, handcrafted products made from sustainable and biodegradable materials. </p>
+        <p>We strive to reduce waste, promote recycling, and celebrate the beauty of nature in every creation.</p>
+        <p></p>
+        <h3>What We Offer</h3>
+        <p>We specialize in a range of eco-friendly products, including:</p>
+        <p>*Handmade Crafts: Beautifully designed, unique pieces created by skilled artisans./p>
+        <p>*Sustainable Home Décor: Elegant, eco-conscious items to add charm to your living spaces.</p>
+        <p>*Reusable Alternatives: Practical solutions like bamboo straws, tote bags, and more.</p>
+        <p>*Eco-friendly Stationery: Organic paper, plantable notebooks, and other green supplies.</p>
+        <p></p>
+        <p>Every product is thoughtfully crafted to ensure minimal environmental impact while enhancing your lifestyle with style and purpose.</p>
+        <p></p>
+        <h4>Why Choose Us</h4>
+        <p>At Craft Tree, we’re more than a shop; we’re a movement toward sustainability. By supporting us, you’re choosing:</p>
+        <p>🌱 Products that are kind to the Earth</p>
+        <p>🌱 A platform that supports local artisans and fair trade</p>
+        <p>🌱 A commitment to reducing plastic and waste</p>
+        <p>🌱 The chance to make your home and life greener</p>
+        <p></p>
+        <h5>Join Us in Making a Difference</h5>
+        <p>Craft Tree is built on a foundation of love for the planet and a vision of a more sustainable future.</p>
+        <p> Together, let’s plant the seeds of change and grow a greener tomorrow.</p>
+        <p>Thank you for being part of our journey. 🌍💚</p>
+        <p>Craft Tree Shop – Where Sustainability Meets Creativity.</p>
+       
+        </div>
+
+        </section>
+    </div>
+
+            <section id="contact" class="contact">
+            <div class="contact-icon">
+                <div>
+                <h4>Contact Us</h4>
+                <p>If you have any questions, feel free to call us at:</p>
+                <p>
+                    <a href="Cellular No: 09076654948" class="phone-number">
+                        <img src="callicon.jpg" alt="Call icon" class="call-icon">
+                        09076654948
+                      </a>
+                </p>
+                <p>
+                    <a href="Cellular No: 09934312715" class="phone-number">
+                        <img src="callicon.jpg" alt="Call icon" class="call-icon">
+                        09934312715
+                      </a>
+                      <p>
+                      <p>If you prefer email, you can reach us at:</p>
+        <p>
+            <a href="https://www.gmail.com/darlenegracepresbitero@gmail.com" class="gmail-link">
+                <img src="Gmail Icon.png" alt="Gmail icon" class="gmail-icon">
+                darlenegracepresbitero@gmail.com
+                    </a>
+                </p>
+              </div>
+              
+            </section>
+
+        </div>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div>
+                        <section id="social" class="social">
+                            <div>
+                            <h2>You can reach us on our Social Accounts</h2>
+                            <p>Craft Tree is your go-to destination for eco-friendly products that make a difference. Join us in creating a greener future!</p>
+                            </div>
+                            <div class="social-icons">
+                                
+                                <a href="https://www.facebook.com/Darlene Grace Lingcon Presbitero" target="_blank">
+                                    <img src="fb icon.jpg" alt="Facebook"> </a>
+                    
+                                    <a href="https://www.Instagram.com/beemsbems" target="_blank">
+                                        <img src="IGicon (2).jpg" alt="Instagram"> </a>
+                    
+                                        <a href="https://www.facebook.com/DarleneGraceLingconPresbitero" target="_blank">
+                                            <img src="Twitter icon.jpg" alt="Twitter"> </a>
+                    
+                                            <a href="https://www.facebook.com/yourusername" target="_blank">
+                                                <img src="callicon.jpg" alt="Whatsapp"> </a>
+            
+                                            </section>
+
+                                        </div>
+
+             </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 Craft Tree Shop. All Rights Reserved.</p>
+    </div>
+</footer>
+       
+
+<!-- Modal Structure -->
+<div id="buyNowModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Confirm Your Purchase</h2>
+        <p id="product-name"></p>
+        <p>Are you sure you want to buy this product?</p>
+        <button class="confirm-btn" onclick="confirmPurchase()">Confirm</button>
+        <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+    </div>
+</div>
+
+</body>
+</html>
