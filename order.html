@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Dancing Script', cursive;
-            background-image: url('Bcakground Image 6.jpg');
+            background-image: url(Bcakground\ Image\ 6.jpg);
             margin: 0;
             padding: 0;
             color: white;
@@ -24,6 +24,7 @@
             color: black;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            
         }
         h1 {
             text-align: center;
@@ -70,20 +71,16 @@
         <p>Product: <span id="product-name"></span></p>
         <p class="price">Price: P<span id="product-price"></span></p>
         <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" value="1" min="1" onchange="calculateTotal()">
+        <input type="number" id="quantity" value="1" min="1" onchange="calculateTotal()">
         <p class="total">Total: P<span id="total-price"></span></p>
-        <form action="thankyou.html" method="GET">
+        <form>
             <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+            <input type="text" id="name" placeholder="Your Full Name" required>
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <input type="email" id="email" placeholder="Your Email" required>
             <label for="address">Delivery Address:</label>
-            <textarea id="address" name="address" rows="4" placeholder="Your Address" required></textarea>
-            <input type="hidden" name="product" id="product-hidden">
-            <input type="hidden" name="price" id="price-hidden">
-            <input type="hidden" name="quantity" id="quantity-hidden">
-            <input type="hidden" name="total" id="total-hidden">
-            <button type="submit" class="cart-btn" onclick="prepareForm()">Submit Order</button>
+            <textarea id="address" rows="4" placeholder="Your Address" required></textarea>
+            <a href="thankyou.html" class="cart-btn" onclick="submitOrder()">Submit Order</a>
         </form>
     </div>
     <script>
@@ -91,7 +88,6 @@
         const productName = urlParams.get('product');
         const productPrice = urlParams.get('price');
 
-        // Display product and price
         document.getElementById('product-name').textContent = productName;
         document.getElementById('product-price').textContent = productPrice;
         document.getElementById('total-price').textContent = productPrice;
@@ -101,12 +97,6 @@
             document.getElementById('total-price').textContent = quantity * productPrice;
         }
 
-        function prepareForm() {
-            document.getElementById('product-hidden').value = productName;
-            document.getElementById('price-hidden').value = productPrice;
-            document.getElementById('quantity-hidden').value = document.getElementById('quantity').value;
-            document.getElementById('total-hidden').value = document.getElementById('total-price').textContent;
-        }
     </script>
 </body>
 </html>
