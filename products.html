@@ -13,6 +13,63 @@
             margin: 0;
             padding: 0;
         }
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black;
+            background-size: cover;
+            padding: 15px 15px;
+        }
+
+        .logo img {
+            width: 150px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-direction: row;
+        }
+
+        .nav-icon{
+            width: 25px;
+            height: 25px;
+            margin-right: 0px;
+            display: flex;
+        
+        }
+
+        .nav-menu li {
+            margin: 0px 0;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: rgb(247, 167, 19);
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: rgba(245, 254, 254, 0.012);
+        }
+
+        .nav-menu img {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+        }
+
         header {
             padding: 10px 10px;
             background-image: url(Bcakground\ Image\ 6.jpg);
@@ -142,6 +199,19 @@
     </style>
 </head>
 <body>
+     <!-- Navigation Bar -->
+ <nav>
+    <a href="#" class="logo">
+        <img src="craftlogo.png" alt="Craft Tree Logo">
+    
+    </a>
+    <ul class="nav-menu">
+        <li><a href="index.html"><img src="Home.jpg" alt="Home Icon"> Home</a></li>
+        <li><a href="about.html"><img src="bell icon.jpg" class="active" alt="About Icon"> About</a></li>
+        <li><a href="contact.html"><img src="callicon.jpg" alt="Contact Icon Icon"> Contact</a></li>
+        <li><a href="products.html"><img src="Products.jpg" alt="Products Icon"> Products</a></li>
+    </ul>
+</nav>
     <header>
         <h1>Our Products</h1>
         <p>Explore our collection of eco-friendly crafts</p>
@@ -153,52 +223,52 @@
     <div class="box-container">
         <div class="box">
             <img src="Image1.jpg" alt="Product 1">
-            <h3>Flower Pot</h3>
-            <div class="price">P75.00 <span>P85.00</span></div>
-            <a href="order.html?product=Flower Pot&price=75"  class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            <h3>Tin Can Pencil Holder</h3>
+            <div class="price">P50.00 <span>P85.00</span></div>
+            <a href="order.html?product=Tin Can Pencil Holder&price=50" class="cart-btn" onclick="openModal('Tin Can Pencil Holder')">Buy Now</a>
         </div>
         <div class="box">
             <img src="Image2.jpg" alt="Product 2">
-            <h3>Flower Pot</h3>
-            <div class="price">P75.00 <span>P85.00</span></div>
-            <a href="#" class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            <h3>Macrame Hanging Wall Decor</h3>
+            <div class="price">P275.00 <span>P379.00</span></div>
+            <a href="order.html?product=Macrame Hanging Wall Decor&price=275" class="cart-btn" onclick="openModal('Macrame Hanging Wall Decor')">Buy Now</a>
         </div>
 
         <div class="box">
             <img src="Image3.jpg" alt="Product 2">
-            <h3>Flower Pot</h3>
-            <div class="price">P75.00 <span>P85.00</span></div>
-            <a href="#" class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            <h3>DIY Plastic-Bottle Flower Pot</h3>
+            <div class="price">P45.00 <span>P65.00</span></div>
+            <a href="order.html?product=DIY Plastic-Bottle Flower Pot&price=45" class="cart-btn" onclick="openModal('DIY Plastic-Bottle Flower Pot')">Buy Now</a>
         </div>
         <div class="box">
             <img src="Image4.jpg" alt="Product 2">
-            <h3>Flower Pot</h3>
-            <div class="price">P75.00 <span>P85.00</span></div>
-            <a href="#" class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            <h3>Aesthetic Macrame Wall Decor</h3>
+            <div class="price">P310.00 <span>P375.00</span></div>
+            <a href="order.html?product=Aesthetic Macrame Wall Decor&price=310" class="cart-btn" onclick="openModal('Aesthetic Macrame Wall Decor')">Buy Now</a>
         </div>
         <div class="box">
             <img src="Image5.jpg" alt="Product 2">
-            <h3>Flower Pot</h3>
+            <h3>Fairy House Night Lights</h3>
             <div class="price">P75.00 <span>P85.00</span></div>
-            <a href="#" class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            <a href="order.html?product=Fairy House Night Lights&price=75" class="cart-btn" onclick="openModal('Fairy House Night Lights')">Buy Now</a>
         </div>
         <div class="box">
             <img src="Image6.jpg" alt="Product 2">
-            <h3>Flower Pot</h3>
-            <div class="price">P75.00 <span>P85.00</span></div>
-            <a href="#" class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            <h3>Tin Can Wind Chimes</h3>
+            <div class="price">P150.00 <span>P000.00</span></div>
+            <a href="order.html?product=Tin Can Wind Chimes&price=150" class="cart-btn" onclick="openModal('Tin Can Wind Chimes')">Buy Now</a>
         </div>
         <div class="box">
             <img src="Image7.jpg" alt="Product 2">
-            <h3>Flower Pot</h3>
-            <div class="price">P75.00 <span>P85.00</span></div>
-            <a href="#" class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            <h3>DIY Bottle Bird House</h3>
+            <div class="price">P89.00 <span>P1000.00</span></div>
+            <a href="order.html?product=DIY Bottle Bird House&price=89" class="cart-btn" onclick="openModal('DIY Bottle Bird House')">Buy Now</a>
         </div>
         <div class="box">
             <img src="Image8.jpg" alt="Product 2">
-            <h3>Flower Pot</h3>
+            <h3>Recycled Bottle Fairy Houses</h3>
             <div class="price">P75.00 <span>P85.00</span></div>
-            <a href="#" class="cart-btn" onclick="openModal('Flower Pot')">Buy Now</a>
+            <a href="order.html?product=Recycled Bottle Fairy Houses&price=75" class="cart-btn" onclick="openModal('Recycled Bottle Fairy Houses')">Buy Now</a>
         </div>
     </div>
 </div>
